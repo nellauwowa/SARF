@@ -1,0 +1,35 @@
+<div class="create" ng-controller="adminsigninController">
+    <img class="logoreviewer" src="css/webpics/iconstart.png" width="30">
+    <div class="logreviewer">ADMIN</div>
+    <div class="bar">
+      <nav class="nav">
+        <ul class="nav">
+          <!--<li class="nav">-->
+              <!--<a class="nav" ng-click="goToHome()"><img src="css/webpics/iconhome.png"  width="19">HOME</a>-->
+         <!--</li>-->
+          <!--<li class="nav">-->
+              <!--<a class="nav" onclick="return alert('You must sign in first!');" ><img src="css/webpics/results.png" width="19">RESULTS</a>-->
+          <!--</li>-->
+          <li class="nav">
+            <a class="nav" ng-click="goToSignin()" ><img src="css/webpics/iconin.png" width="19">SIGN IN AS REVIEWER</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br><br><br><br>
+    <div class="logininglass">
+        <form class="login" action="">
+            <div class="imgcontainer">
+                <img src="css/webpics/s3w.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required><br>
+                <button class="login" type="submit" ng-click="goToAdminHome()">Sign In</button>
+            </div>
+
+        </form>
+    </div>
+</div>

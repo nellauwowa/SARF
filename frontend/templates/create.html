@@ -1,0 +1,39 @@
+<div class="create" ng-controller="createController">
+    <img class="logoreviewer" src="css/webpics/iconstart.png" width="30">
+    <div class="logreviewer">LOGGED AS REVIEWER</div>
+
+    <div class="bar">
+      <nav class="nav">
+        <ul class="nav">
+          <li class="nav">
+            <a class="nav" ng-click="goToSignin()"><img src="css/webpics/iconout.png" width="19">SIGN OUT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br><br><br><br><br>
+    <div class="createinglass">
+        <p class="createtext">
+            <b>CREATE A REVIEW</b><br>
+        </p>
+        <div class="comboCreateReview">
+        <input list="browsers" name="browser" ng-model="category">
+            <datalist class="comboCreate" id="browsers">
+                <option class="comboCreate" value="Wonder Woman">
+                <option class="comboCreate" value="Deadpool">
+                <option class="comboCreate" value="Doctor Strange">
+            </datalist><br>
+        </div>
+        <br><br>
+
+        <form action="">
+            <textarea rows="9" cols="50" name="comment" placeholder="Input Review" ng-model="review1"></textarea>
+            <img src="css/webpics/logoanalysis.png" class="createReviewLogo">
+
+            <br><button  class="create" type="button" ng-click="createReview()">SUBMIT</button> <!--GINAWANG BUTTON-->
+        </form>
+    </div><br><br>
+
+    <br>
+    <center><button class="createshow" ng-click="goToReviews()"><b>SHOW REVIEWS</b></button><br></center>
+</div>

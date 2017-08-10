@@ -1,0 +1,77 @@
+<div class="create" ng-controller="reviewsController">
+    <img class="logoreviewer" src="css/webpics/iconstart.png" width="30">
+    <div class="logreviewer">LOGGED AS REVIEWER</div>
+    <div class="bar">
+      <nav class="nav">
+        <ul class="nav">
+          <li class="nav">
+              <a class="nav" ng-click="goToReviewerHome()"><img src="css/webpics/iconhome.png"  width="19">HOME</a>
+         </li>
+          <li class="nav">
+              <a class="nav" ng-click="goToCreate()"><img src="css/webpics/writing.png" width="19">ADD REVIEW</a>
+          </li>
+          <li class="nav">
+            <a class="nav" ng-click="goToSignin()"><img src="css/webpics/iconout.png" width="19">SIGN OUT</a>
+          </li>
+        </ul>
+      </nav>
+    </div><br>
+
+    <br><br><br><br><br>
+    <div class="reviewlist">
+
+        <p class="createtext" ng-show="category=='Wonder Woman'" ng-model = "subCategory">
+            <img src="css/webpics/ww.png" style="width:25%; position:relative; top:-25px;  left: 350px;" class="image"><button style="float: right; margin-left: 10px" class="createshow" ng-click="back()">CHANGE MOVIE</button>
+            <br>An Amazon princess (Gal Gadot) finds her idyllic life on an island occupied only by female warriors interrupted when a pilot (Chris Pine) crash-lands nearby. After rescuing him, she learns that World War I is engulfing the planet, and vows to use her superpowers to restore peace. Directed by Patty Jenkins (Monster).
+            <br>-------------------------------------------------------------------------------------------------------------<br>
+            <span class="reviewList" ng-repeat ="review in displayReview"><br>REVIEW: {{review}}<br>
+            ~~~~~~~~~~~~~~<br>
+            </span>
+        </p>
+        <p class="createtext" ng-show="category=='Deadpool'">
+            <img src="css/webpics/dpool.png" style="width:13%; position:relative; top:-25px;  left: 430px;" class="image"><button style="float: right; margin-left: 10px" class="createshow" ng-click="back()">CHANGE MOVIE</button>
+            <br>Based upon Marvel Comics' most unconventional anti-hero, DEADPOOL tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life. (C) Fox
+            <br>-------------------------------------------------------------------------------------------------------------<br>
+            <span class="reviewList" ng-repeat ="review in displayReview"><br>REVIEW: {{review}}<br>
+            ~~~~~~~~~~~~~~<br>
+            </span>
+        </p>
+        <p class="createtext" ng-show="category=='Doctor Strange'">
+            <img src="css/webpics/drstrange.png" style="width:25%; position:relative; top:-15px;  left: 370px;" class="image"><button style="float: right; margin-left: 10px" class="createshow" ng-click="back()">CHANGE MOVIE</button>
+            <br>A disgraced former surgeon named Stephen Strange (Benedict Cumberbatch) becomes a powerful sorcerer under the tutelage of a mystic known as the Ancient One (Tilda Swinton). Rachel McAdams, Mads Mikkelsen, and Chiwetel Ejiofor co-star in this entry in the Marvel Cinematic Universe. Directed by Scott Derrickson (Sinister).
+            <br>-------------------------------------------------------------------------------------------------------------<br>
+            <span class="reviewList" ng-repeat ="review in displayReview"><br>REVIEW: {{review}}<br>
+            ~~~~~~~~~~~~~~<br>
+            </span>
+
+        </p>
+        <p class="createtext" ng-hide="category =='Wonder Woman' || category == 'Doctor Strange' || category == 'Deadpool'">
+            <b>MOVIES</b><br><br>
+            Reviewing films can seem fun, but it actually takes discipline to explain all the elements of a film and to express your opinion succinctly. Check out our film review samples to gain a better understanding of how to write one yourself.
+
+            <div style="position:absolute" ng-hide="category =='Wonder Woman' || category == 'Doctor Strange' || category == 'Deadpool'">
+                <div id="firstPart">
+                    <a href="" ng-click="setMovies('Wonder Woman')">  <img src="css/webpics/page1.jpg" width="55%" class="image"> </a>
+                    <br><p class="movieRatings">RATING: <b>{{movie1Ratings}}%</b> </p>
+                </div>
+                <div id="secondPart">
+                    <a href="" ng-click="setMovies('Deadpool')">   <img src="css/webpics/page2.jpg" width="55%" class="image"> </a>
+                    <br><p class="movieRatings">RATING: <b>{{movie2Ratings}}% </b></p>
+                </div>
+                <div id="thirdPart">
+                    <a href="" ng-click="setMovies('Doctor Strange')">  <img src="css/webpics/page3.jpg" width="55%" class="image"> </a>
+                    <br><p class="movieRatings">RATING: <b>{{movie3Ratings}}% </b></p>
+                </div>
+            </div>
+
+
+
+
+
+        </p>
+
+    </div>
+
+
+
+</div>
