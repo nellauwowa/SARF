@@ -1,0 +1,76 @@
+service: sarf-frontend
+
+runtime: python27
+
+api_version: 1
+threadsafe: yes
+default_expiration: 1h
+
+
+builtins:
+- deferred: on
+- appstats: on
+
+includes:
+- env_variables.yaml
+
+libraries:
+- name: jinja2
+  version: latest
+- name: lxml
+  version: latest
+#- name: webapp2
+#  version: latest
+- name: webob
+  version: latest
+- name: ssl
+  version: latest
+- name: pycrypto
+  version: latest
+
+skip_files:
+- ^(.*/)?app\.ya?ml
+- ^(.*/)?index\.ya?ml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.scss
+- ^(.*/)?.*\.less
+- ^(docs/.*)
+- ^(tools/.*)
+- ^(.*/)?.*\.csv
+- ^(.*/)?.*\.txt
+- ^(test/.*)
+- ^(.*/)?.*\.coverage
+- ^(.*/)?.*\.coveragerc
+- ^(.*/)?.*\.gitignore
+- ^(\.git/.*)
+
+handlers:
+
+- url: /_ah/queue/deferred
+  script: google.appengine.ext.deferred.deferred.application
+  login: admin
+
+# Main script
+#- url: /.*
+#  script: main.app
+#  login: optional
+
+# static files
+- url: /
+  static_files: frontend/index.html
+  upload: frontend/index.html
+
+- url: /css
+  static_dir: frontend/css
+
+- url: /js
+  static_dir: frontend/js
+
+- url: /templates
+  static_dir: frontend/templates
+
+

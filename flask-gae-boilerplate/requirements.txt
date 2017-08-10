@@ -1,0 +1,5 @@
+flask
+google-api-python-client
+google-cloud-storage
+flask-cors
+google-cloud-language
